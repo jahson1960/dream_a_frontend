@@ -11,6 +11,8 @@ declare global {
 }
 
 
+
+
 export default function PayPage() {
   const params = useSearchParams();
   const data = params?.get("ref");
@@ -107,6 +109,19 @@ export default function PayPage() {
   // start payment when ref is ready
   useEffect(() => {
     if (!data) return;
+
+    const link =
+      document.querySelector("link[rel*='icon']") ||
+      document.createElement("link");
+
+    link.setAttribute("rel", "icon");
+    link.setAttribute(
+      "href",
+      "https://refugebank.com.ng/wp-content/uploads/2024/03/refuge-icon.png"
+    );
+
+    document.head.appendChild(link);
+
 
     let attempts = 0;
 

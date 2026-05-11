@@ -32,3 +32,4 @@ PRODUCTION.env.local
 # other test files
 *.php
 *.html
+list_all_clients.tsx
